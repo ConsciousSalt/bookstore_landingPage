@@ -309,6 +309,70 @@ body{
     }
 }
 
+.block-booksRange{
+    &-list{
+        display: flex;
+        justify-content: space-around;
+        &-item{
+            text-align: center;
+            justify-content: center;
+            flex-basis: 30%;
+            margin-top: 85px;
+            .block-book-demo-small{
+                width: 270px;
+                height: 410px;
+                &__title{
+                    left: 68.3px;
+                    top: 71px;       
+                    font-size: 24px;
+                    span{
+                        font-size: 12px;
+                        letter-spacing: 0.6px;
+                        margin-top: 8px;
+                    }
+                }
+                &__author{
+                    bottom: 28.4px;
+                    left: 80.2px;
+                    letter-spacing: -0.5px;
+                }
+            }
+            &__title{
+                margin-top: 30px;
+                font-size: 24px;
+                letter-spacing: 1.15px;
+            }
+            &__description{
+                margin-top: 18px;
+                margin-bottom: 15px;
+                font-family: 'Open Sans', serif;
+                font-size: 15px;
+                letter-spacing: 0.72px; 
+            }
+            &__btn{
+                margin-top: 20px;
+                text-decoration: none;
+                color: $accent-color;
+                letter-spacing: 1.4px;
+            }
+        }
+    }
+
+    &__btn{
+        background-color: $accent-color;
+        border: none;
+        color: $light-color;
+        text-decoration: none;
+        border-radius: 3px;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 91px;
+        padding: 14px 33px;
+        letter-spacing: 0.7px;
+        margin-left: calc(50% - 151px / 2);
+    }   
+}
+
 .wrap{
     max-width: 1170px;
     margin: 0 auto;     
