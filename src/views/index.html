@@ -35,9 +35,9 @@
                     <a href="" class="header__logo"></a>
                     <ul class="header-list">
                         <li class="header-list__item active"><a href="" class="header-list__link">Home</a></li>
-                        <li class="header-list__item"><a href="" class="header-list__link">About</a></li>
-                        <li class="header-list__item"><a href="" class="header-list__link">Contents</a></li>
-                        <li class="header-list__item"><a href="" class="header-list__link">Books</a></li>
+                        <li class="header-list__item"><a href="#about" class="header-list__link">About</a></li>
+                        <li class="header-list__item"><a href="#contents" class="header-list__link">Contents</a></li>
+                        <li class="header-list__item"><a href="#books" class="header-list__link">Books</a></li>
                         <li class="header-list__item"><a href="" class="header-list__link">Education</a></li>
                         <li class="header-list__item"><a href="" class="header-list__link">Skills</a></li>
                         <li class="header-list__item"><a href="" class="header-list__link">Portfolio</a></li>
@@ -98,9 +98,11 @@
         </div>
         <div class="page page_gray">
             <div class="wrap">
+                <a name="contents"></a>
                 <h2 class="page__title">Book Contents</h2>
                 <p class="page__subtitle">Let's see what we have covered in the book</p>
                 <div class="block-about">
+                    <a name="about"></a>
                     <div class="block-about-text">
                         <h3>About the book</h3>
                         <p class="block-about-text__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali qua. Ut enim ad minim veniam, quis nostrud exercitation ull amco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillu m dolore eu fugiat nulla pariatur. </p>
@@ -126,13 +128,26 @@
                             <li>Consectetur adipisicing elit</li>
                             <li>Labore et dolore magna</li>
                         </ol>
-                        <button class="block-about-table__btn">More</button>
+                        <ol id="nextContentList" class="block-about-table__list block-about-table__list_next">
+                            <li>Lorem ipsum dolor sit amet</li>
+                            <li>Consectetur adipisicing elit</li>
+                            <li>Labore et dolore magna</li>
+                            <li>Consectetur adipisicing elit</li>
+                            <li>Labore et dolore magna</li>
+                            <li>Lorem ipsum dolor sit amet</li>
+                            <li>Consectetur adipisicing elit</li>
+                            <li>Labore et dolore magna</li>
+                            <li>Consectetur adipisicing elit</li>
+                            <li>Labore et dolore magna</li>
+                        </ol>
+                        <button id="nextContent" class="block-about-table__btn">More</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="page">
             <div class="wrap">
+                <a name="books"></a>
                 <h2 class="page__title">Other Books</h2>
                 <p class="page__subtitle">Some books you might be interested in</p>    
                 <div class="block-booksRange">
@@ -350,6 +365,24 @@
                     arrows:false
                 });
             });
+        </script>
+        <script>
+            const hiddenClass = 'block-about-table__list_next-hidden';
+            const nextContent = document.querySelector('#nextContent');
+            const nextContentList = document.querySelector('#nextContentList');
+            
+            function fadeContentList(){
+                if (nextContentList.classList.contains(hiddenClass)){
+                    nextContentList.classList.remove(hiddenClass);
+                    nextContent.innerHTML = 'Less';
+                }else{
+                    nextContentList.classList.add(hiddenClass);
+                    nextContent.innerHTML = 'More';                      
+                }
+            };
+
+            nextContent.addEventListener('click', fadeContentList);
+            nextContentList.classList.add(hiddenClass);
         </script>
     </body>
 </html>
